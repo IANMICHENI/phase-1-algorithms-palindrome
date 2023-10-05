@@ -1,25 +1,17 @@
+
 function isPalindrome(word) {
-  // Write your algorithm here
+  const cleanedWord = word.replace(/[^a-z]/g, "").toLowerCase();
+  return cleanedWord === cleanedWord.split("").reverse().join("");
 }
 
-/* 
-  Add your pseudocode here
-*/
+console.log("Expecting: true");
+console.log("=>", isPalindrome("racecar"));
 
-/*
-  Add written explanation of your solution here
-*/
+console.log("");
 
-// You can run `node index.js` to view these console logs
-if (require.main === module) {
-  // add your own custom tests in here
-  console.log("Expecting: true");
-  console.log("=>", isPalindrome("racecar"));
-
-  console.log("");
-
-  console.log("Expecting: false");
-  console.log("=>", isPalindrome("robot"));
-}
+console.log("Expecting: false");
+console.log("=>", isPalindrome("robot"));
+console.log("=>", isPalindrome("A man, a plan, a canal: Panama"));
+console.log("=>", isPalindrome("Was it a car or a cat I saw?"));
 
 module.exports = isPalindrome;
